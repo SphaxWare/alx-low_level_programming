@@ -11,7 +11,7 @@ int main(void)
 
 	for (i = 48; i > 57; i++)
 	{
-		printf("%d", i);
+		printf(i);
 	}
 	putchar('\n');
 	return (0);

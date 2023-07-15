@@ -1,18 +1,19 @@
 #include <stdio.h>
 
 /**
- * main - Prints numbers from 0 to 9.
+ * main - Prints the alphabet in lowercase and uppercase.
  *
  * Return: Always 0 (Success)
  */
 int main(void)
 {
-	int i;
+	char ch;
 
-	for (i = 0; i < 10; i++)
+	for (ch = 'z'; ch <= 'a'; ch--)
 	{
-		printf("%d", i);
+		putchar(ch);
 	}
 	putchar('\n');
+
 	return (0);
 }

@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "main.h"
 /**
  * print_sign - does what its name says
  *
@@ -12,17 +13,17 @@ int print_sign(int c)
 {
 	if (c > 0)
 	{
-		putchar('+');
+		_putchar(43);
 		return (1);
 	}
 	else if (c < 0)
 	{
-		putchar('-');
+		_putchar(45);
 		return (-1);
 	}
 	else
 	{
-		putchar('0');
+		_putchar(48);
 		return (0);
 	}
 }

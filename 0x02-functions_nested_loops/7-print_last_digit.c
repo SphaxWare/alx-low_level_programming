@@ -3,7 +3,7 @@
 /**
  * print_last_digit - does what its name says
  *
- * @c:ascii number for alphabet
+ * @i:number
  *
  * Description:this function print sign
  *
@@ -11,7 +11,7 @@
  */
 int print_last_digit(int i)
 {
-	i=i%10;
+	i = i % 10;
 	if (i < 0)
 	{
 		_putchar(-i + 48);

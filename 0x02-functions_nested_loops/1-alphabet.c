@@ -2,7 +2,7 @@
 /**
  * main - Entry point of the program
  *
- * description print_alphabet does what its name says
+ * print_alphabet does what its name says
  *
  * Return:Always 0 (Success)
  */

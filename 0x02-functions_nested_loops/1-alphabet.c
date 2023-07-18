@@ -1,10 +1,8 @@
 #include <stdio.h>
 /**
- * main - Entry point of the program
- *
  * print_alphabet - does what its name says
  *
- * Return:Always 0 (Success)
+ * Description:this function print all the alphabets
  */
 void print_alphabet(void)
 {

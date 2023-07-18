@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "main.h"
 /**
- * Description: print _putchar
+ * description - print _putchar
  *
  * main - Entry point of the program
  *

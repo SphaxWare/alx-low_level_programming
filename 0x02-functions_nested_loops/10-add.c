@@ -4,7 +4,7 @@
  * add - add numbers
  * @a:int
  * @b:int
- * retun:result
+ * Retun:result
  */
 int add(int a, int b)
 {

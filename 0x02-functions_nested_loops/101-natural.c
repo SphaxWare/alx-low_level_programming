@@ -4,7 +4,7 @@
  * main - prints the n times table, starting with 0
  * return:0
  */
-int main()
+int main(void)
 {
 	int i, sum = 0;
 
@@ -16,6 +16,6 @@ int main()
 		}
 	i++;
 	}
-	printf("%d",sum);
+	printf("%d\n", sum);
 	return (0);	
 }

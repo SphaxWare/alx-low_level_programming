@@ -1,12 +1,13 @@
 #include "main.h"
 
 /**
- * more_numbers - check the code
- *
+ * print_line - check the code
+ * @n:int
  */
 void print_line(int n)
 {
 	int i;
+
 	for (i = 0; i < n; i++)
 	{
 		_putchar('_');

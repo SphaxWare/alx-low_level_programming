@@ -3,18 +3,18 @@
 /**
  * _isupper - check if UPPER.
  *
- * @c:variable 
+ * @c:variable
  *
  * Return: Always 0.
  */
 int _isupper(int c)
 {
-	if (c <= 90 && c >= 65)
-	{	
+	if (c <= 'A' && c >= 'Z')
+	{
 		return (1);
 	}
 	else
 	{
 		return (0);
-	}	
+	}
 }

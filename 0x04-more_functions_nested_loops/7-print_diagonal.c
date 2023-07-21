@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * print_line - check the code
+ * print_diagonal - check the code
  * @n:int
  */
 void print_diagonal(int n)

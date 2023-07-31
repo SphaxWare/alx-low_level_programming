@@ -8,7 +8,7 @@
  *
  * Return: A pointer to the memory area `dest`
  */
-unsigned int _strspn(char *s, char *accept);
+unsigned int _strspn(char *s, char *accept)
 {
 	int i = 0;
 	int j;

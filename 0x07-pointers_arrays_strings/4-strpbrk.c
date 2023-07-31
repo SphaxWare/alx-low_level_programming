@@ -8,9 +8,8 @@
  *
  * Return: A pointer to the memory area `dest`
  */
-unsigned int *_strpbrk(char *s, char *accept)
+char *_strpbrk(char *s, char *accept)
 {
-	int i = 0;
 	int j;
 
 	while (*s)

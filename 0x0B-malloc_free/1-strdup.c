@@ -1,6 +1,6 @@
 #include <stdlib.h>
 /**
- * create_array - create an array
+ *_strdup - create an array
  *
  * @str:char
  *

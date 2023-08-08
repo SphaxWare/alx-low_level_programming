@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include <string.h>
 /**
- *_str_concat - create an array
+ * str_concat - create an array
  *
  * @s1:char
  * @s2:char

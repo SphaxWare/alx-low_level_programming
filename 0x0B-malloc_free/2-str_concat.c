@@ -1,9 +1,10 @@
 #include <stdlib.h>
 #include <string.h>
 /**
- *_strdup - create an array
+ *_str_concat - create an array
  *
- * @str:char
+ * @s1:char
+ * @s2:char
  *
  * Return:Null or pointer
  */

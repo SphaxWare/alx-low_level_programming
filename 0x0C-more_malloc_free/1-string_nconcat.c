@@ -1,29 +1,89 @@
 #include <stdlib.h>
-#include "main.h"
-#include <string.h>
-/**
- * *string_nconcat - allocates memory using malloc
- * @s1: number of bytes to allocate
- * @s2: chari
- * @n : num
- * Return: a pointer to the allocated memory
- */
-char *string_nconcat(char *s1, char *s2, unsigned int n)
-{
-	size_t l1, l2;
-	char *p;
 
-	if (s1 == NULL)
-		s1 = "";
-	if (s2 == NULL)
-		s2 = "";
-	l1 = strlen(s1);
-	l2 = strlen(s2);
-	if (n >= l2)
-		p = malloc((sizeof(char) * l1) + (sizeof(char) * l2) + 1);
+#include "main.h"
+
+
+
+/**
+
+ * *string_nconcat - concatenates n bytes of a string to another string
+
+ * @s1: string to append to
+
+ * @s2: string to concatenate from
+
+ * @n: number of bytes from s2 to concatenate to s1
+
+ *
+
+ * Return: pointer to the resulting string
+
+ */
+
+char *string_nconcat(char *s1, char *s2, unsigned int n)
+
+{
+
+	char *s;
+
+	unsigned int i = 0, j = 0, len1 = 0, len2 = 0;
+
+
+
+	while (s1 && s1[len1])
+
+		len1++;
+
+	while (s2 && s2[len2])
+
+		len2++;
+
+
+
+	if (n < len2)
+
+		s = malloc(sizeof(char) * (len1 + n + 1));
+
 	else
-		p = malloc((sizeof(char) * l1) + n + 1);
-	if (p == NULL)
+
+		s = malloc(sizeof(char) * (len1 + len2 + 1));
+
+
+
+	if (!s)
+
 		return (NULL);
-	return (p);
+
+
+
+	while (i < len1)
+
+	{
+
+		s[i] = s1[i];
+
+		i++;
+
+	}
+
+
+
+	while (n < len2 && i < (len1 + n))
+
+		s[i++] = s2[j++];
+
+
+
+	while (n >= len2 && i < (len1 + len2))
+
+		s[i++] = s2[j++];
+
+
+
+	s[i] = '\0';
+
+
+
+	return (s);
+
 }

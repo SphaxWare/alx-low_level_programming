@@ -19,7 +19,7 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 		printf("Error\n");
 		exit(98);
 	}
-	int num1 = atoi(argv[1]);
+	num1 = atoi(argv[1]);
 	op = argv[2];
 	num2 = atoi(argv[3]);
 	if (get_op_func(op) == NULL || op[1] != '\0')
@@ -33,6 +33,6 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 		printf("Error\n");
 		exit(100);
 	}
-	prinf("%d\n",get_op_func(num1, num2));
+	printf("%d\n",get_op_func(num1, num2));
 	return (0);
 }

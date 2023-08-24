@@ -24,7 +24,7 @@ list_t *add_node(list_t **head, const char *str)
 	node->str = strdup(str);
 	node->len = len;
 	node->next = (*head);
-	*head->new;
+	*head->node;
 
 	return (*head);
 }

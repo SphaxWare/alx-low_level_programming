@@ -1,7 +1,8 @@
 #include "lists.h"
 /**
  * add_nodeint - check the code
- *
+ * @head:pointer to the pointer to first elem
+ * @n:value to add to the new node
  * Return: adress of new element or null.
  */
 listint_t *add_nodeint(listint_t **head, const int n)

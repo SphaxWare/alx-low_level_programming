@@ -1,15 +1,21 @@
 #include "lists.h"
+#include <stdio.h>
+
+size_t looped_listint_len(const listint_t *head);
+size_t print_listint_safe(const listint_t *head);
 
 /**
- * reverse_linked_list_custom - reverses a linked list
- * @start: pointer to the first node in the list
+ * looped_listint_len - Counts the number of unique nodes
+ * in a looped listint_t linked list.
+ * @head: A pointer to the head of the listint_t to check.
  *
- * Return: pointer to the first node in the new list
+ * Return: If the list is not looped - 0.
+ * Otherwise - the number of unique nodes in the list.
  */
-listint_t *reverse_linked_list_custom(listint_t **start)
+size_t looped_listint_len(const listint_t *head)
 {
-	listint_t *pointer1, *pointer2;
-	size_t count = 1;
+	const listint_t *pointer1, *pointer2;
+	size_t nodes = 1;
 
 	if (head == NULL || head->next == NULL)
 		return (0);
@@ -24,7 +30,7 @@ listint_t *reverse_linked_list_custom(listint_t **start)
 			pointer1 = head;
 			while (pointer1 != pointer2)
 			{
-				count++;
+				nodes++;
 				pointer1 = pointer1->next;
 				pointer2 = pointer2->next;
 			}
@@ -32,11 +38,11 @@ listint_t *reverse_linked_list_custom(listint_t **start)
 			pointer1 = pointer1->next;
 			while (pointer1 != pointer2)
 			{
-				count++;
+				nodes++;
 				pointer1 = pointer1->next;
 			}
 
-			return (count);
+			return (nodes);
 		}
 
 		pointer1 = pointer1->next;
@@ -47,12 +53,12 @@ listint_t *reverse_linked_list_custom(listint_t **start)
 }
 
 /**
- * print_listint_safe_updated - Prints a listint_t list safely.
+ * print_listint_safe - Prints a listint_t list safely.
  * @head: A pointer to the head of the listint_t list.
  *
  * Return: The number of nodes in the list.
  */
-size_t print_listint_safe_updated(const listint_t *head)
+size_t print_listint_safe(const listint_t *head)
 {
 	size_t nodes, index = 0;
 
@@ -79,4 +85,3 @@ size_t print_listint_safe_updated(const listint_t *head)
 
 	return (nodes);
 }
-

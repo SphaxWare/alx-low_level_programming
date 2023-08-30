@@ -8,103 +8,75 @@
  */
 listint_t *reverse_linked_list_custom(listint_t **start)
 {
-	listint_t *previous = NULL;
-	listint_t *next_node = NULL;
+	listint_t *pointer1, *pointer2;
+	size_t count = 1;
 
-	while (*start)
-	{
-		next_node = (*start)->next;
-		(*start)->next = previous;
-		previous = *start;
-		*start = next_node;
-	}
-
-	*start = previous;
-
-	return (*start);
-}
-
-size_t count_nodes_in_looped_list(const listint_t *head);
-size_t print_listint_safely(const listint_t *head);
-
-/**
- * count_nodes_in_looped_list - Counts the number of unique nodes
- * in a looped listint_t linked list.
- * @start: A pointer to the head of the listint_t to check.
- *
- * Return: If the list is not looped - 0.
- * Otherwise - the number of unique nodes in the list.
- */
-size_t count_nodes_in_looped_list(const listint_t *start)
-{
-	const listint_t *tortoise, *hare;
-	size_t nodes = 1;
-
-	if (start == NULL || start->next == NULL)
+	if (head == NULL || head->next == NULL)
 		return (0);
 
-	tortoise = start->next;
-	hare = (start->next)->next;
+	pointer1 = head->next;
+	pointer2 = (head->next)->next;
 
-	while (hare)
+	while (pointer2)
 	{
-		if (tortoise == hare)
+		if (pointer1 == pointer2)
 		{
-			tortoise = start;
-			while (tortoise != hare)
+			pointer1 = head;
+			while (pointer1 != pointer2)
 			{
-				nodes++;
-				tortoise = tortoise->next;
-				hare = hare->next;
+				count++;
+				pointer1 = pointer1->next;
+				pointer2 = pointer2->next;
 			}
 
-			tortoise = tortoise->next;
-			while (tortoise != hare)
+			pointer1 = pointer1->next;
+			while (pointer1 != pointer2)
 			{
-				nodes++;
-				tortoise = tortoise->next;
+				count++;
+				pointer1 = pointer1->next;
 			}
 
-			return (nodes);
+			return (count);
 		}
 
-		tortoise = tortoise->next;
-		hare = (hare->next)->next;
+		pointer1 = pointer1->next;
+		pointer2 = (pointer2->next)->next;
 	}
 
 	return (0);
 }
 
 /**
- * print_listint_safely - Prints a listint_t list safely.
- * @start: A pointer to the head of the listint_t list.
+ * print_listint_safe_updated - Prints a listint_t list safely.
+ * @head: A pointer to the head of the listint_t list.
  *
  * Return: The number of nodes in the list.
  */
-size_t print_listint_safely(const listint_t *start)
+size_t print_listint_safe_updated(const listint_t *head)
 {
 	size_t nodes, index = 0;
 
-	nodes = count_nodes_in_looped_list(start);
+	nodes = looped_listint_len(head);
 
 	if (nodes == 0)
 	{
-		for (; start != NULL; nodes++)
+		for (; head != NULL; nodes++)
 		{
-			printf("[%p] %d\n", (void *)start, start->n);
-			start = start->next;
+			printf("[%p] %d\n", (void *)head, head->n);
+			head = head->next;
 		}
 	}
 	else
 	{
 		for (index = 0; index < nodes; index++)
 		{
-			printf("[%p] %d\n", (void *)start, start->n);
-			start = start->next;
+			printf("[%p] %d\n", (void *)head, head->n);
+			head = head->next;
 		}
 
-		printf("-> [%p] %d\n", (void *)start, start->n);
+		printf("-> [%p] %d\n", (void *)head, head->n);
 	}
 
 	return (nodes);
 }
+

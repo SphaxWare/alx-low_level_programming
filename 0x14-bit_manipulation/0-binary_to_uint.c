@@ -15,9 +15,9 @@ unsigned int binary_to_uint(const char *b)
 
 	for (loop = 0; b[loop]; loop++)
 	{
-		if (b[i] != '0' || b[i] != '1')
+		if (b[loop] != '0' || b[loop] != '1')
 			return (0);
-		converted = 2 * converted + (b[i] - 48);
+		converted = 2 * converted + (b[loop] - 48);
 	}
 
 	return (converted);

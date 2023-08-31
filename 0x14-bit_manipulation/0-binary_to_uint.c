@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * binary_to_int - check the code
+ * binary_to_uint - check the code
  * @b:string
  * Return: converted.
  */

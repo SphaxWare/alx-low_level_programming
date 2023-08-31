@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- * main - check the code
- *
- * Return: Always 0.
+ * binary_to_int - check the code
+ * @b:string
+ * Return: converted.
  */
 unsigned int binary_to_uint(const char *b)
 {

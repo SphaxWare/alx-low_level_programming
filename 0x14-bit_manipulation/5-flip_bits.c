@@ -1,9 +1,10 @@
 #include "main.h"
 
 /**
- * main - check the code
- *
- * Return: Always 0.
+ * flip_bits - check the code
+ * @n:int
+ * @m:int
+ * Return: counter
  */
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {

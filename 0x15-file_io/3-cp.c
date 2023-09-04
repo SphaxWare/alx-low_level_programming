@@ -1,3 +1,5 @@
+#include "main.h"
+#include <stdio.h>
 #include <stdlib.h>
 
 char *create_buffer(char *file);
@@ -99,4 +101,3 @@ int main(int argc, char *argv[])
 
 	return (0);
 }
-

@@ -1,7 +1,7 @@
 #include "lists.h"
 /**
  * dlistint_len - check the code
- *
+ * @h: head
  * Return: int.
  */
 size_t dlistint_len(const dlistint_t *h)
@@ -13,5 +13,5 @@ size_t dlistint_len(const dlistint_t *h)
 		i++;
 		h = h->next;
 	}
-	return (i)
+	return (i);
 }

@@ -14,12 +14,8 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	    ht->size == 0)
 		return (NULL);
 	index = key_index((const unsigned char *)key, ht->size);
-	if (ht->array[index] == NULL)
-		return (NULL);
 	find = ht->array[index];
-	if (strcmp(find->key, key) == 0)
-		return (find->value);
-	while (find->next != NULL)
+	while (find != NULL)
 	{
 		if (strcmp(find->key, key) == 0)
 			return (find->value);

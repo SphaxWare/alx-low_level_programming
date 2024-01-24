@@ -13,16 +13,16 @@ def island_perimeter(grid):
         for y, cell in enumerate(row):
             if cell == 1:
                 p += 4
-                #check right
+                # check right
                 if y < len(row) - 1 and row[y + 1] == 1:
                     p -= 1
-                #check left
+                # check left
                 if y > 0 and row[y - 1] == 1:
                     p -= 1
-                #check up
+                # check up
                 if x > 0 and grid[x - 1][y] == 1:
                     p -= 1
-                #check down
+                # check down
                 if x < len(grid) - 1 and grid[x + 1][y] == 1:
                     p -= 1
     return p
